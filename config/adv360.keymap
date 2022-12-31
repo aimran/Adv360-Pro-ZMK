@@ -6,7 +6,7 @@
 
 #define MACLOCK      LG(LC(Q))
 #define SPACE_RIGHT  LC(RIGHT)
-#define SPADE_LEFT   LC(LEFT)
+#define SPACE_LEFT   LC(LEFT)
 
 &mt {
     tapping-term-ms = <210>;
