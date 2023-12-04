@@ -7,8 +7,9 @@
 
 #define DEFAULT 0
 #define KEYPAD 1
-#define FN 2
+#define LOWER 2
 #define MOD 3
+#define UPPER 4
 
 #define MACLOCK      LG(LC(Q))
 #define SPACE_RIGHT  LC(RIGHT)
@@ -47,9 +48,9 @@
       bindings = <
         &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                   &none   &kp N6 &kp N7 &kp N8    &kp N9   &kp N0   &kp MINUS
         &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                    &none   &kp Y  &kp U  &kp I     &kp O    &kp P    &kp BSLH
-        &kp LCTRL &kp A     &kp S    &kp D    &kp F      &kp G  &none           &mo FN      &kp LALT                    &kp LGUI  &kp RALT               &none   &kp H  &kp J  &kp K     &kp L    &kp SEMI &mt RCTRL SQT
+        &kp LCTRL &kp A     &kp S    &kp D    &kp F      &kp G  &none           &mo LOWER      &kp LALT                    &kp LGUI  &kp RALT               &none   &kp H  &kp J  &kp K     &kp L    &kp SEMI &mt RCTRL SQT
         &kp LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B         &none    &none       &kp HOME &none &none        &kp PG_UP &none     &none                &kp N  &kp M  &kp COMMA &kp DOT  &kp FSLH &kp RSHFT
-        &kp EQUAL &kp GRAVE &none    &none    &none                    &kp LGUI &kp BSPC    &kp END                     &kp PG_DN &kp ENTER &kp SPACE                   &none  &none     &none    &none    &none
+        &kp EQUAL &kp GRAVE &none    &none    &none                    &kp LGUI &kp BSPC    &kp END                     &kp PG_DN &kp ENTER &lt UPPER SPACE             &none  &none     &none    &none    &none
       >;
     };
     keypad {
@@ -61,15 +62,48 @@
         &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
     };
-    fn {
+    // fn {
+    //   bindings = <
+    //     &kp F1 &kp F2   &kp F3     &kp F4   &kp F5   &kp F6    &tog 1                                                       &mo 3       &kp F7    &kp F8    &kp F9    &kp F10     &kp F11 &kp F12
+    //     &trans &kp EXCL &kp AT     &kp LBRC &kp RBRC &kp PIPE  &none                                                        &none       &trans    &trans    &trans    &trans      &trans  &trans
+    //     &trans &kp AMPS &kp DOLLAR &kp LPAR &kp RPAR &kp GRAVE &none         &trans &trans             &trans &trans        &kp MACLOCK &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT   &trans  &trans
+    //     &trans &kp HASH &kp CARET  &kp LBKT &kp RBKT &kp TILDE        &none  &none  &trans &none &none &trans &none  &none              &kp UNDER &kp MINUS &kp EQUAL &kp PERCENT &trans  &trans
+    //     &trans &trans   &trans     &trans   &trans                    &trans &trans &trans             &trans &trans &trans                       &trans    &trans    &trans      &trans  &trans
+    //   >;
+    // };
+
+    lower_layer {
+// LOWER
+// -----------------------------------------------------------------------           -------------------------------------------------------------------------
+// |          |         |         |         |         |         |        |           |         |         |         |         |         |          |          |
+// |          |   "|"   |  DLLR   |    <    |    /    |    -    |        |           |         |    _    |    \    |    >    |    ^    |    ~     |          |
+// |          |    +    |  "["    |   "{"   |   "("   |    &    |        |           |         |    =    |   ")"   |   "}"   |   "]"   |    *     |          |
+// |          |         |         |         |         |         |---------           ----------|         |         |         |         |          |          |
+// |          |         |         |         |         |----------                              ----------|         |         |         |          |          |
+// ----------------------------------------------------                                                   ----------------------------------------------------
+//
+//                                                                        Thumb Cluster
+//                                                       -----------------           ------------------
+//                                                       |       |       |           |       | ADJUST |
+//                                               -------------------------           ---------------------------
+//                                               |       |       |       |           |       |        |        |
+//                                               |       |       |--------           --------|        |        |
+//                                               |       |       |       |           |       |        |        |
+//                                               -------------------------           ---------------------------
       bindings = <
-        &kp F1 &kp F2   &kp F3     &kp F4   &kp F5   &kp F6    &tog 1                                                       &mo 3       &kp F7    &kp F8    &kp F9    &kp F10     &kp F11 &kp F12
-        &trans &kp EXCL &kp AT     &kp LBRC &kp RBRC &kp PIPE  &none                                                        &none       &trans    &trans    &trans    &trans      &trans  &trans
-        &trans &kp AMPS &kp DOLLAR &kp LPAR &kp RPAR &kp GRAVE &none         &trans &trans             &trans &trans        &kp MACLOCK &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT   &trans  &trans
-        &trans &kp HASH &kp CARET  &kp LBKT &kp RBKT &kp TILDE        &none  &none  &trans &none &none &trans &none  &none              &kp UNDER &kp MINUS &kp EQUAL &kp PERCENT &trans  &trans
-        &trans &trans   &trans     &trans   &trans                    &trans &trans &trans             &trans &trans &trans                       &trans    &trans    &trans      &trans  &trans
+        &trans    &trans    &trans   &trans   &trans     &trans    &none                &none  &trans    &trans    &trans       &trans       &trans      &trans
+        &trans    &kp PIPE  &kp DLLR &kp LT   &kp SLASH  &kp MINUS &trans               &trans &kp UNDER &kp BSLH  &kp GT       &kp CARET    &kp TILDE   &trans
+        &trans    &kp PLUS  &kp LBKT &kp LBRC &kp LPAR   &kp AMPS  &none                &none  &kp EQUAL &kp RPAR  &kp RBRC     &kp RBKT     &kp ASTRK   &trans
+        &trans    &trans    &trans   &trans   &trans     &trans                                &trans    &trans    &trans       &trans       &trans      &trans
+        &trans    &trans    &trans   &trans   &trans                                                     &trans    &trans       &trans       &trans      &trans
+                                                                   &trans               &trans
+                                                         &none     &trans               &trans &mo ADJUST
+                                                &trans   &trans    &trans               &trans &trans    &trans
       >;
     };
+
+
+
     mod_layer {
       bindings = <
         &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none                                                                                                          &trans                 &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &none
@@ -79,5 +113,39 @@
         &none &none        &none        &bl BL_INC   &bl BL_DEC                                       &rgb_ug RGB_TOG &bl BL_TOG &none                  &none      &bl BL_TOG &rgb_ug RGB_TOG                                     &bl BL_INC   &bl BL_DEC   &none        &none        &none
       >;
     };
+
+    upper_layer {
+// UPPER
+// -----------------------------------------------------------------------           -------------------------------------------------------------------------
+// |    ~     |   F1    |    F2   |   F3    |   F4    |   F5    |        |           |         |   F6    |   F7    |   F8    |   F9    |   F10    |          |
+// |          |         |         |         |         |         |        |           |         |         |         |         |         |          |          |
+// |          |         |         |         |         |         |        |           |         |  Left   |   Down  |   Up    |  Right  |          |          |
+// |          |         |         |         |         |         |        |           |         |         |         |         |         |          |          |
+// |          |         |         |         |         |         |---------           ----------|         |         |         |         |          |          |
+// |          |         |         |         |         |----------                              ----------|         |         |         |          |          |
+// ----------------------------------------------------                                                   ----------------------------------------------------
+//
+//                                                                        Thumb Cluster
+//                                                       -----------------           ------------------
+//                                                       | ADJUST|       |           |       |        |
+//                                               -------------------------           ---------------------------
+//                                               |       |       |       |           |       |        |        |
+//                                               |       |       |--------           --------|        |        |
+//                                               |       |       |       |           |       |        |        |
+//                                               -------------------------           ---------------------------
+      bindings = <
+        &kp GRAVE &kp F1    &kp F2   &kp F3   &kp F4     &kp F5  &none                  &none     &kp F6   &kp F7     &kp F8       &kp F9       &kp F10         &trans
+        &trans    &trans    &trans   &trans   &trans     &trans  &none                  &none     &trans   &trans     &trans       &trans       &trans          &trans
+        &trans    &trans    &trans   &trans   &trans     &trans  &none                  &none     &kp LEFT &kp DOWN   &kp UP       &kp RIGHT    &trans          &trans
+        &trans    &trans    &trans   &trans   &trans     &trans                                   &trans   &trans     &trans       &trans       &trans          &trans
+        &trans    &trans    &trans   &trans   &trans                                                       &trans     &trans       &trans       &trans          &trans
+                                                                 &trans                 &trans
+                                                         &mo ADJUST &trans              &trans    &trans
+                                                &trans   &trans  &trans                 &trans    &trans &trans
+      >;
+    };
+
+
+
   };
 };
