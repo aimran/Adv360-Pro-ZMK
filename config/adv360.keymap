@@ -62,47 +62,26 @@
         &mo 2     &kp GRAVE &kp CAPS &kp LEFT &kp RIGHT                &kp BSPC &kp DEL   &kp END              &kp PG_DN &kp ENTER &kp KP_N0              &kp UP     &kp DOWN     &kp KP_DOT    &kp RBKT        &mo 2
       >;
     };
-    // fn {
-    //   bindings = <
-    //     &kp F1 &kp F2   &kp F3     &kp F4   &kp F5   &kp F6    &tog 1                                                       &mo 3       &kp F7    &kp F8    &kp F9    &kp F10     &kp F11 &kp F12
-    //     &trans &kp EXCL &kp AT     &kp LBRC &kp RBRC &kp PIPE  &none                                                        &none       &trans    &trans    &trans    &trans      &trans  &trans
-    //     &trans &kp AMPS &kp DOLLAR &kp LPAR &kp RPAR &kp GRAVE &none         &trans &trans             &trans &trans        &kp MACLOCK &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT   &trans  &trans
-    //     &trans &kp HASH &kp CARET  &kp LBKT &kp RBKT &kp TILDE        &none  &none  &trans &none &none &trans &none  &none              &kp UNDER &kp MINUS &kp EQUAL &kp PERCENT &trans  &trans
-    //     &trans &trans   &trans     &trans   &trans                    &trans &trans &trans             &trans &trans &trans                       &trans    &trans    &trans      &trans  &trans
-    //   >;
-    // };
 
     lower_layer {
-// LOWER
-// -----------------------------------------------------------------------           -------------------------------------------------------------------------
-// |          |         |         |         |         |         |        |           |         |         |         |         |         |          |          |
-// |          |   "|"   |  DLLR   |    <    |    /    |    -    |        |           |         |    _    |    \    |    >    |    ^    |    ~     |          |
-// |          |    +    |  "["    |   "{"   |   "("   |    &    |        |           |         |    =    |   ")"   |   "}"   |   "]"   |    *     |          |
-// |          |         |         |         |         |         |---------           ----------|         |         |         |         |          |          |
-// |          |         |         |         |         |----------                              ----------|         |         |         |          |          |
-// ----------------------------------------------------                                                   ----------------------------------------------------
-//
-//                                                                        Thumb Cluster
-//                                                       -----------------           ------------------
-//                                                       |       |       |           |       | ADJUST |
-//                                               -------------------------           ---------------------------
-//                                               |       |       |       |           |       |        |        |
-//                                               |       |       |--------           --------|        |        |
-//                                               |       |       |       |           |       |        |        |
-//                                               -------------------------           ---------------------------
-      bindings = <
-        &trans    &trans    &trans   &trans   &trans     &trans    &none                &none  &trans    &trans    &trans       &trans       &trans      &trans
-        &trans    &kp PIPE  &kp DLLR &kp LT   &kp SLASH  &kp MINUS &trans               &trans &kp UNDER &kp BSLH  &kp GT       &kp CARET    &kp TILDE   &trans
-        &trans    &kp PLUS  &kp LBKT &kp LBRC &kp LPAR   &kp AMPS  &none                &none  &kp EQUAL &kp RPAR  &kp RBRC     &kp RBKT     &kp ASTRK   &trans
-        &trans    &trans    &trans   &trans   &trans     &trans                                &trans    &trans    &trans       &trans       &trans      &trans
-        &trans    &trans    &trans   &trans   &trans                                                     &trans    &trans       &trans       &trans      &trans
-                                                                   &trans               &trans
-                                                         &none     &trans               &trans &mo ADJUST
-                                                &trans   &trans    &trans               &trans &trans    &trans
-      >;
-    };
 
-
+   // LOWER
+   // -----------------------------------------------------------------------           -------------------------------------------------------------------------
+   // |          |         |         |         |         |         |        |           |         |         |         |         |         |          |          |
+   // |          |   "|"   |  DLLR   |    <    |    /    |    -    |        |           |         |    _    |    \    |    >    |    ^    |    ~     |          |
+   // |          |    +    |  "["    |   "{"   |   "("   |    &    |        |           |         |    =    |   ")"   |   "}"   |   "]"   |    *     |          |
+   // |          |         |         |         |         |         |---------           ----------|         |         |         |         |          |          |
+   // |          |         |         |         |         |----------                              ----------|         |         |         |          |          |
+   // ----------------------------------------------------                                                   ----------------------------------------------------
+   //
+       bindings = <
+         &trans &trans   &trans     &trans   &trans    &trans     &none                                                        &none    &trans    &trans    &trans    &trans     &trans     &trans
+         &trans &kp PIPE &kp DLLR   &kp LT   &kp SLASH &kp MINUS  &trans                                                       &trans   &kp UNDER &kp BSLH  &kp GT    &kp CARET  &kp TILDE  &trans
+         &trans &kp PLUS &kp LBKT   &kp LBRC &kp LPAR  &kp AMPS   &none         &trans &trans             &trans &trans        &none    &kp EQUAL &kp RPAR  &kp RBRC  &kp RBKT   &kp ASTRK  &trans
+         &trans &trans   &trans     &trans   &trans    &trans            &none  &none  &trans &none &none &trans &none  &none           &trans    &trans    &trans    &trans     &trans     &trans
+         &trans &trans   &trans     &trans   &trans                      &trans &trans &trans             &trans &trans &trans                    &trans    &trans    &trans     &trans     &trans
+       >;
+     };
 
     mod_layer {
       bindings = <
@@ -125,24 +104,13 @@
 // |          |         |         |         |         |----------                              ----------|         |         |         |          |          |
 // ----------------------------------------------------                                                   ----------------------------------------------------
 //
-//                                                                        Thumb Cluster
-//                                                       -----------------           ------------------
-//                                                       | ADJUST|       |           |       |        |
-//                                               -------------------------           ---------------------------
-//                                               |       |       |       |           |       |        |        |
-//                                               |       |       |--------           --------|        |        |
-//                                               |       |       |       |           |       |        |        |
-//                                               -------------------------           ---------------------------
-      bindings = <
-        &kp GRAVE &kp F1    &kp F2   &kp F3   &kp F4     &kp F5  &none                  &none     &kp F6   &kp F7     &kp F8       &kp F9       &kp F10         &trans
-        &trans    &trans    &trans   &trans   &trans     &trans  &none                  &none     &trans   &trans     &trans       &trans       &trans          &trans
-        &trans    &trans    &trans   &trans   &trans     &trans  &none                  &none     &kp LEFT &kp DOWN   &kp UP       &kp RIGHT    &trans          &trans
-        &trans    &trans    &trans   &trans   &trans     &trans                                   &trans   &trans     &trans       &trans       &trans          &trans
-        &trans    &trans    &trans   &trans   &trans                                                       &trans     &trans       &trans       &trans          &trans
-                                                                 &trans                 &trans
-                                                         &mo ADJUST &trans              &trans    &trans
-                                                &trans   &trans  &trans                 &trans    &trans &trans
-      >;
+       bindings = <
+         &kp GRAVE &kp F1   &kp F2     &kp F3   &kp F4    &kp F5     &none                                                        &none    &kp F6    &kp F7    &kp F8    &kp F9     &kp F10    &trans
+         &trans    &trans   &trans     &trans   &trans    &trans     &trans                                                       &trans   &trans    &trans    &trans    &trans     &trans     &trans
+         &trans    &trans   &trans     &trans   &trans    &trans     &none         &trans &trans             &trans &trans        &none    &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans     &trans
+         &trans    &trans   &trans     &trans   &trans    &trans            &none  &none  &trans &none &none &trans &none  &none           &trans    &trans    &trans    &trans     &trans     &trans
+         &trans    &trans   &trans     &trans   &trans                      &trans &trans &trans             &trans &trans &trans                    &trans    &trans    &trans     &trans     &trans
+       >;
     };
 
 
